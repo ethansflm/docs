@@ -127,15 +127,15 @@
   - dto、mysql entity 、mongo schema 的 class 尽量不要共用，比如下面这个文件中，ApiProperty 是定义 dto 文件用的，Prop 是定义 mongo schema 用的，不要混用。
   - 关于上面一条，也可选择 ApiProperty 和 Column、Prop 等公用，但 dto 中需要通过 PickType， PartialType 等工具，达到 class 上的区分
 
-  ```ts
-  // -.schema.ts
-  @ApiProperty({
-    description: '產品分類父級_id',
-    type: String,
-  })
-  @Prop()
-  parentId: Types.ObjectId;
-  ```
+    ```ts
+    // -.schema.ts
+    @ApiProperty({
+      description: '產品分類父級_id',
+      type: String,
+    })
+    @Prop()
+    parentId: Types.ObjectId;
+    ```
 
 - 关于 flyway 管理数据库版本
 
